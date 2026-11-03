@@ -21,12 +21,20 @@ class ProfileUpdateTest extends TestCase
             ->assertSee('設定')
             ->assertSee('プロフィール')
             ->assertSee('パスワード')
-            ->assertSee('外観')
+            ->assertDontSee('外観')
             ->assertSee('名前とメールアドレスを変更できます')
             ->assertSee('名前')
             ->assertSee('メールアドレス')
             ->assertSee('保存する')
             ->assertSee('アカウントを削除');
+    }
+
+    public function test_appearance_settings_redirect_to_profile(): void
+    {
+        $this->actingAs(User::factory()->create());
+
+        $this->get('/settings/appearance')
+            ->assertRedirect('/settings/profile');
     }
 
     public function test_profile_information_can_be_updated(): void

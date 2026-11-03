@@ -3,7 +3,6 @@
         <flux:navlist>
             <flux:navlist.item href="{{ route('settings.profile') }}" wire:navigate>プロフィール</flux:navlist.item>
             <flux:navlist.item href="{{ route('settings.password') }}" wire:navigate>パスワード</flux:navlist.item>
-            <flux:navlist.item href="{{ route('settings.appearance') }}" wire:navigate>外観</flux:navlist.item>
         </flux:navlist>
     </div>
 

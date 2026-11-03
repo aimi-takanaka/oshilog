@@ -1,0 +1,10 @@
+# Copy this file to deploy.local.ps1 and fill in your own values.
+# deploy.local.ps1 is gitignored and must not be committed.
+
+$Key = Join-Path $env:USERPROFILE "path\to\your-ssh-key"
+$SshHost = "your-host.example.com"
+$SshUser = "your-ssh-user"
+$SshPort = "22"
+$RemoteBase = "/home/your-user/your-domain"
+$RemoteApp = "$RemoteBase/oshilog"
+$PublicUrl = "https://example.com/oshilog/"
